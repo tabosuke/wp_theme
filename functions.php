@@ -11,8 +11,21 @@ add_theme_support( 'post-thumbnails' );
 //カスタムメニュー
 register_nav_menu( 'header-nav',  ' ヘッダーナビゲーション ' );
 register_nav_menu( 'footer-nav',  ' フッターナビゲーション ' );
-// common.jsの読み込み
+// nav_btn.jsの読み込み
 function nav_btn_scripts(){
   wp_enqueue_script( 'nav_btn_script', get_template_directory_uri() .'/js/nav_btn.js', array('jquery') );
 }
 add_action( 'wp_enqueue_scripts' , 'nav_btn_scripts' );
+//サイドバーにウィジェット追加
+function widgetarea_init() {
+register_sidebar(array(
+  'name'=>'サイドバー',
+  'class' => 'sidebarInner__contents',
+  'id' => 'side-widget',
+  'before_widget'=>'<div id="%1$s" class="%2$s sidebar-wrapper">',
+  'after_widget'=>'</div>',
+  'before_title' => '<h4 class="sidebarInner__title--h5">',
+  'after_title' => '</h4>'
+  ));
+}
+add_action( 'widgets_init', 'widgetarea_init' );

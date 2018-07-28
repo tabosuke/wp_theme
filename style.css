@@ -196,7 +196,7 @@ body {
 @media screen and ( max-width:479px ) {
   .headerInner__btn {
     position: absolute;
-    top: 21px;
+    top: 32%;
     right: 3%;
     margin: 0;
     border: 0;
@@ -268,10 +268,10 @@ body {
     padding: 10px 0 5px;
     text-decoration: none;
     color: white;
-    transition: border-bottom 0.3s;
+    transition: color 0.5s;
   }
   .headerInner__nav li a:hover {
-    border-bottom: solid 2px #fff;
+    color: #9a4731;
   }
 }
 /* ----------------------------------- */
@@ -328,7 +328,6 @@ body {
 .sidebar {
   float: left;
   width: 26.5%;
-  height: 1000px;
   border-radius: 5px;
   padding: 50px 2%;
   background-color: #fff;
@@ -362,5 +361,3 @@ body {
 .boxshadow {
   box-shadow: 0 2px 4px rgba(0, 0, 0, .20);
 }
-
-/* sp */
