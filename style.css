@@ -170,6 +170,7 @@ body {
 }
 
 .headerInner {
+  position: relative;
   width: 1000px;
   margin: 0 auto;
 }
@@ -184,8 +185,96 @@ body {
   font-size: 2.6em;
   font-family: "Courier New", "Courier";
   color: white;
+  text-decoration: none;
 }
+/* spボタン */
+@media screen and ( min-width:480px ) {
+  .headerInner__btn {
+    display: none;
+  }
+}
+@media screen and ( max-width:479px ) {
+  .headerInner__btn {
+    position: absolute;
+    top: 21px;
+    right: 3%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
+    outline: none;
+  }
+  .headerInner__btn i {
+    font-size: 2.0em;
+    color: #fff;
+  }
+}
+/* ----------------------------------- */
+/* ヘッダーナビ本懐 */
+@media screen and ( max-width:479px ) {
+  .headerInner__nav {
+    display: none;
+  }
+  .headerInner__nav {
+  position: absolute;
+  width: 100vw;
+  margin-left: -3vw;
+  background-color: rgba(80, 32, 3, 0.5);
+  box-shadow: 0 2px 4px rgba(46, 5, 1, 0.3);
+  }
 
+  .headerInner__nav ul {
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .headerInner__nav li {
+    margin: 0 6%;
+  }
+  .headerInner__nav li a:before {
+    content: "\f054";
+    font-family: 'Font Awesome 5 Free';
+    color: #fff;
+    font-size: 0.9em;
+    padding-right: 10px;
+  }
+
+  .headerInner__nav li a {
+    display: block;
+    padding: 15px 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+  }
+
+  .headerInner__nav li a:hover {
+    opacity: 0.8;
+  }
+}
+@media screen and ( min-width:480px ) {
+  .headerInner__nav{
+    position: absolute;
+    top: 33%;
+    right: 0;
+  }
+  .headerInner__nav li {
+    display: inline-block;
+  }
+  .headerInner__nav li a {
+    font-size: 1.1em;
+    margin-left: 55px;
+    padding: 10px 0 5px;
+    text-decoration: none;
+    color: white;
+    transition: border-bottom 0.3s;
+  }
+  .headerInner__nav li a:hover {
+    border-bottom: solid 2px #fff;
+  }
+}
+/* ----------------------------------- */
 /* container, content */
 
 .container {
@@ -217,6 +306,7 @@ body {
 .content {
   float: left;
   width: 70%;
+  height: 2000px;
   margin-right: 3.5%;
   border-radius: 5px;
   padding: 50px 5%;
@@ -226,7 +316,7 @@ body {
   .content {
     float: none;
     width: 94%;
-    margin: 0 3%;
+    margin: 10px 3% 30px;
     padding: 0 3%;
   }
 }
@@ -247,7 +337,7 @@ body {
   .sidebar {
     float: none;
     width: 94%;
-    margin: 0 3%;
+    margin: 10px 3%;
     padding: 0 3%;
   }
 }

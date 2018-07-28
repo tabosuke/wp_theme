@@ -11,6 +11,17 @@
 <body <?php body_class(); ?>>
   <header class="header boxshadow">
     <div class="headerInner">
-      <p class="headerInner__logo">LoLMode</p>
+      <a class="headerInner__logo" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
+      <!--スマホ用メニューボタン-->
+      <button type="button" class="headerInner__btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!--  -->
+      <?php wp_nav_menu( array(
+      'theme_location' => 'header-nav',
+      'container' => 'nav',
+      'container_class' => 'headerInner__nav',
+      'fallback_cb' => ''
+      ) ); ?>
     </div>
   </header>
