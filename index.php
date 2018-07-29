@@ -3,6 +3,7 @@
   <div class="containerInner">
     <div class="content boxshadow">
     </div>
+    <?php get_search_form(); ?>
     <?php get_sidebar(); ?>
   </div>
 </div>
