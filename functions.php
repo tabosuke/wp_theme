@@ -24,8 +24,29 @@ register_sidebar(array(
   'id' => 'side-widget',
   'before_widget'=>'<div id="%1$s" class="%2$s sidebar-wrapper">',
   'after_widget'=>'</div>',
-  'before_title' => '<h4 class="sidebarInner__title--h5">',
-  'after_title' => '</h4>'
+  'before_title' => '<h5 class="sidebarInner__title--h5">',
+  'after_title' => '</h5>'
   ));
 }
 add_action( 'widgets_init', 'widgetarea_init' );
+//フッターにウィジェットを追加
+function widgetfooter_init() {
+register_sidebar(array(
+  'name'=>'フッターウィジェット',
+  'class' => 'footerInner__widget',
+  'id' => 'footer-widget',
+  'before_widget'=>'<div id="%1$s" class="%2$s footerInner__widget">',
+  'after_widget'=>'</div>',
+  'before_title' => '<h5 class="footerInner__widget__title--h5">',
+  'after_title' => '</h5>'
+  ));
+}
+add_action( 'widgets_init', 'widgetfooter_init' );
+//タグクラウドのフォントサイズを一定に
+//タグクラウドの出力変更
+function wp_tag_cloud_custom_ex( $output ) {
+  //style属性を取り除く
+  $output = preg_replace( '/\s*?style="[^"]+?"/i', '',  $output);
+  return $output;
+}
+add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom_ex');

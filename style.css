@@ -126,6 +126,7 @@ body {
 
 .content__title {
   font-size: 2.4em;
+  color: #fff;
 }
 @media screen and ( max-width:479px ) {
   .content__title {
@@ -184,8 +185,15 @@ body {
 .headerInner__logo {
   font-size: 2.6em;
   font-family: "Courier New", "Courier";
-  color: white;
   text-decoration: none;
+  color: #fff;
+  transition: opacity 0.3s;
+}
+.headerInner__logo:hover {
+  opacity: 0.75;
+}
+.headerInner__logo:visited {
+  color: #fff;
 }
 /* spボタン */
 @media screen and ( min-width:480px ) {
@@ -268,10 +276,10 @@ body {
     padding: 10px 0 5px;
     text-decoration: none;
     color: white;
-    transition: color 0.5s;
+    transition: opacity 0.3s;
   }
   .headerInner__nav li a:hover {
-    color: #9a4731;
+    opacity: 0.75;
   }
 }
 /* ----------------------------------- */
@@ -324,7 +332,7 @@ body {
 .content__text {
   margin-bottom: 1.3em;
 }
-
+/* サイドバー */
 .sidebar {
   float: left;
   width: 26.5%;
@@ -332,12 +340,85 @@ body {
   padding: 25px 2%;
   background-color: #fff;
 }
+.sidebarInner a {
+  color: #55bfbf;
+  text-decoration: none;
+}
+.sidebarInner a:hover {
+  text-decoration: underline;
+}
+.sidebarInner__title--h5 {
+  font-size: 1.2em;
+  color: #3d1600;
+}
+.sidebar-wrapper {
+  margin-top: 1.8em;
+}
+.sidebar-wrapper:first-child {
+  margin: 0;
+}
+.sidebarInner .widget_recent_entries li {
+  margin-top: 0.85em;
+}
+.sidebarInner .widget_recent_entries li a {
+  font-size: 1.2em;
+}
+.sidebarInner .widget_recent_entries li a:hover {
+  color:
+}
+.sidebarInner .widget_recent_entries .post-date {
+  display: block;
+  margin-left: 0.2em;
+  font-size: 0.9em;
+  color: #606060;
+}
+.sidebarInner .widget_recent_entries .post-date:before {
+  content: "\f274";
+  font-family: 'Font Awesome 5 Free';
+  font-size: 0.9em;
+  padding-right: 5px;
+}
+.sidebarInner .widget_categories .cat-item {
+  margin-top: .85em;
+}
+.sidebarInner .widget_categories .cat-item a {
+  font-size: 1.2em;
+}
+.tagcloud {
+  margin-top: .85em;
+}
+.tagcloud a {
+  background-color: #fff;
+  border: 1px solid #3d1600;
+  border-radius: 2px;
+  color: #3d1600;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 4px 8px;
+  text-decoration: none;
+  font-size: 1em;
+}
+.tagcloud a:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f02b";
+  font-weight: 900;
+  font-size: 0.8em;
+  padding-right: 6px;
+}
+.tagcloud a:hover {
+  background-color: rgba(107, 209, 209, 0.4);
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+.tagcloud a .tag-link-count {
+  margin-left: 8px;
+}
 @media screen and ( max-width:479px ) {
   .sidebar {
     float: none;
     width: 94%;
     margin: 10px 3%;
-    padding: 0 3%;
+    padding: 1.2em 3%;
   }
 }
 /* 検索窓スタイル */
@@ -400,12 +481,106 @@ body {
 }
 
 .footerInner {
-  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 30px auto;
+}
+@media screen and ( max-width:479px ) {
+  .footerInner {
+    display: none;
+  }
+}
+
+.footerInner a {
+  color: #55bfbf;
+  text-decoration: none;
+}
+.footerInner a:hover {
+  text-decoration: underline;
+}
+.footerInner__widget__title--h5 {
+  font-size: 1.2em;
+  color: #3d1600;
+}
+.footer-wrapper {
+  margin-top: 1.8em;
+}
+.footer-wrapper:first-child {
+  margin: 0;
+}
+.footerInner .widget_recent_entries li {
+  margin-top: 0.85em;
+}
+.footerInner .widget_recent_entries li a {
+  font-size: 1.2em;
+}
+.footerInner .widget_recent_entries .post-date {
+  display: block;
+  margin-left: 0.2em;
+  font-size: 0.9em;
+  color: #606060;
+}
+.footerInner .widget_recent_entries .post-date:before {
+  content: "\f274";
+  font-family: 'Font Awesome 5 Free';
+  font-size: 0.9em;
+  padding-right: 5px;
+}
+.footerInner .widget_categories .cat-item {
+  margin-top: .85em;
+}
+.footerInner .widget_categories .cat-item a {
+  font-size: 1.2em;
+}
+.footerInner .widget_tag_cloud {
+  max-width: 33%;
+}
+.footerInner .tagcloud {
+  margin-top: .85em;
+}
+.footerInner .tagcloud a {
+  background-color: #fff;
+  border: 1px solid #3d1600;
+  border-radius: 2px;
+  color: #3d1600;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 4px 8px;
+  text-decoration: none;
+  font-size: 1em;
+}
+.footerInner .tagcloud a:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f02b";
+  font-weight: 900;
+  font-size: 0.8em;
+  padding-right: 6px;
+}
+.footerInner .tagcloud a:hover {
+  background-color: rgba(107, 209, 209, 0.4);
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+.footerInner .tagcloud a .tag-link-count {
+  margin-left: 8px;
 }
 
 .footerMenu {
-  height: 100px;
   background-color: #6bd1d1;
+}
+.footerMenu__copyright {
+  width: 1000px;
+  margin: 0 auto;
+  padding: .8em 0;
+  text-align: center;
+  font-size: .8em;
+  color: #f5f5f5;
+}
+@media screen and ( max-width:479px ) {
+  .footerMenu__copyright {
+    width: 100vw;
+  }
 }
 
 /* design */
