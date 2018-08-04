@@ -50,3 +50,8 @@ function wp_tag_cloud_custom_ex( $output ) {
   return $output;
 }
 add_filter( 'wp_tag_cloud', 'wp_tag_cloud_custom_ex');
+//概要（抜粋）の文字数調整
+function my_excerpt_length($length) {
+	return 80;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
