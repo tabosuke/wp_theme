@@ -431,7 +431,7 @@ body {
   font-size: 1.2em;
 }
 @media screen and ( min-width:480px ) {
-  .sidebarInner .footerMenu_sp {
+  .footerMenu_sp {
     display: none;
   }
 }
