@@ -102,6 +102,18 @@ hr {
 input, select {
   vertical-align: middle;
 }
+input[type="button"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+input[type="text"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 
 /* reset css ここまで */
 
