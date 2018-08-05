@@ -6,11 +6,15 @@
 <article <?php post_class( 'article_single' ); ?>>
   <!--投稿日・著者を表示-->
   <!--タイトル-->
+  <p class="article_author">
+    <span>著者：</span>
+    <?php the_author(); ?>
+  </p>
   <h1><?php the_title(); ?></h1>
   <div class="article-info">
     <!--投稿日を取得-->
     <span class="article-date">
-      <i class="fas fa-pencil-alt"></i>
+      <i class="far fa-calendar-check"></i>
       <time
       datetime="<?php echo get_the_date( 'Y-m-d' ); ?>">
       <?php echo get_the_date(); ?>
@@ -19,6 +23,7 @@
     <!--カテゴリ取得-->
     <?php if(has_category() ): ?>
     <span class="cat-data">
+      <i class="far fa-folder-open"></i>
       <?php echo get_the_category_list( ' ' ); ?>
     </span>
     <?php endif; ?>

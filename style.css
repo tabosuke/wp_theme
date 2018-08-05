@@ -128,8 +128,28 @@ body {
     font-size: 2.0em;
   }
 }
-.article_single {
-
+.article_single .article-date {
+  color: #666;
+}
+.article-info .cat-data {
+  margin-left: 1em;
+  color: #666;
+}
+.article_author {
+  font-size: 0.9em;
+  color: #666;
+}
+.article-info {
+  margin-bottom: 1em;
+}
+.article-info .cat-data a {
+  text-decoration: none;
+}
+.article-info .cat-data a:hover {
+  text-decoration: underline;
+}
+.article-info .cat-data a:visited {
+  color: #666;
 }
 .article_single .article_main {
   margin-bottom: 70px;
@@ -445,6 +465,7 @@ body {
 .index_content p {
   margin-bottom: 0.9em;
   color: #666;
+  font-size: 0.9em;
 }
 
 /* サイドバー */
